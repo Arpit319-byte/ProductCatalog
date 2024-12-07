@@ -1,5 +1,6 @@
 package com.example.ProductCatalog.Controller;
 
+import com.example.ProductCatalog.Service.ProductService;
 import com.example.ProductCatalog.model.Product;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,6 +35,11 @@ public class ProductController {
     @GetMapping("/{id}")
     public ResponseEntity<Product> getProductById(@PathVariable Long id) {
         logger.info("Getting product by id: {}", id);
-        return ResponseEntity.ok(productService.getProductById(id));
+
+        Product product = productService.getProductById(id);
+        if (product == null) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(product);
     }
 }

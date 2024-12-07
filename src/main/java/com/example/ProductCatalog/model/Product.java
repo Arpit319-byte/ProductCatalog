@@ -1,8 +1,6 @@
 package com.example.ProductCatalog.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Inheritance;
-import jakarta.persistence.InheritanceType;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,9 +14,19 @@ import lombok.Setter;
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Product extends BaseClass {
 
+    @Column(nullable = false)
     private String name;
+
+    @Column(nullable = false)
+
     private String description;
+
     private String imageUrl;
+
+    @Column(nullable = false)
     private Double price;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id", nullable = false)
     private Category category;
 }

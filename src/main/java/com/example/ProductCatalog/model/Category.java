@@ -11,7 +11,7 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
-AllArgsConstructor
+@AllArgsConstructor
 @NoArgsConstructor
 public class Category extends BaseClass {
 

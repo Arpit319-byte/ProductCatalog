@@ -4,6 +4,7 @@ import com.example.ProductCatalog.Repository.CategoryRepository;
 import com.example.ProductCatalog.Repository.ProductRepository;
 import com.example.ProductCatalog.model.Category;
 import com.example.ProductCatalog.model.Product;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -48,32 +49,32 @@ public class DataSeeder implements CommandLineRunner {
         phone.setImageUrl("https://www.google.com");
 
         Product laptop=new Product();
-        phone.setName("Dell XPS 15");
-        phone.setPrice(1000.00);
-        phone.setCategory(electronics);
-        phone.setDescription("Dell XPS 15 is a great laptop");
-        phone.setImageUrl("https://www.google.com");
+        laptop.setName("Dell XPS 15");
+        laptop.setPrice(1000.00);
+        laptop.setCategory(electronics);
+        laptop.setDescription("Dell XPS 15 is a great laptop");
+        laptop.setImageUrl("https://www.google.com");
 
         Product shirt=new Product();
-        phone.setName("Blue Shirt");
-        phone.setPrice(1000.00);
-        phone.setCategory(clothing);
-        phone.setDescription("Blue Shirt is a great shirt");
-        phone.setImageUrl("https://www.google.com");
+        shirt.setName("Blue Shirt");
+        shirt.setPrice(1000.00);
+        shirt.setCategory(clothing);
+        shirt.setDescription("Blue Shirt is a great shirt");
+        shirt.setImageUrl("https://www.google.com");
 
         Product jeans=new Product();
-        phone.setName("Blue Jeans");
-        phone.setPrice(1000.00);
-        phone.setCategory(clothing);
-        phone.setDescription("Blue Jeans is a great jeans");
-        phone.setImageUrl("https://www.google.com");
+        jeans.setName("Blue Jeans");
+        jeans.setPrice(1000.00);
+        jeans.setCategory(clothing);
+        jeans.setDescription("Blue Jeans is a great jeans");
+        jeans.setImageUrl("https://www.google.com");
 
         Product pizza=new Product();
-        phone.setName("Pepperoni Pizza");
-        phone.setPrice(1000.00);
-        phone.setCategory(food);
-        phone.setDescription("Pepperoni Pizza is a great pizza");
-        phone.setImageUrl("https://www.google.com");
+        pizza.setName("Pepperoni Pizza");
+        pizza.setPrice(1000.00);
+        pizza.setCategory(food);
+        pizza.setDescription("Pepperoni Pizza is a great pizza");
+        pizza.setImageUrl("https://www.google.com");
 
         // Save products
         productRepository.saveAll(Arrays.asList(phone, laptop, shirt, jeans, pizza));
